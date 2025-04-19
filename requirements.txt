@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pytesseract
+pillow
+numpy
+opencv-python-headless
+google-cloud-vision
+openai
+gtts
+python-multipart
