@@ -42,14 +42,7 @@ async def recognize_with_gpt(file: UploadFile = File(...)):
         Пиши лише список, без заголовків, без коментарів, без JSON.
         """
 
-        gpt_response = openai_client.chat.completions.create(
-            model="gpt-5-nano",
-            messages=[
-                {"role": "system", "content": "Ти досвідчений парсер накладних."},
-                {"role": "user", "content": prompt}
-            ],
-            max_completion_tokens=2000
-        )
+        gpt_response = openai_client.chat.completions.create( model="gpt-3.5-turbo", messages=[ {"role": "system", "content": "Ти досвідчений парсер накладних."}, {"role": "user", "content": prompt} ], temperature=0.1, max_tokens=2000 )
 
         result_text = gpt_response.choices[0].message.content.strip()
 
