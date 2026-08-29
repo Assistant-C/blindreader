@@ -43,7 +43,7 @@ async def recognize_with_gpt(file: UploadFile = File(...)):
         """
 
         gpt_response = openai_client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="gpt-5-nano",
             messages=[
                 {"role": "system", "content": "Ти досвідчений парсер накладних."},
                 {"role": "user", "content": prompt}
